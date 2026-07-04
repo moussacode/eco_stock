@@ -39,9 +39,9 @@ Le projet a été réalisé dans le cadre d'un atelier sur Django REST Framework
 ## 1. Cloner le projet
 
 ```bash
-git clone https://github.com/votre-utilisateur/eco-stock-api.git
+git clone https://github.com/moussacode/eco_stock.git
 
-cd eco-stock-api
+cd eco_stock
 ```
 
 ---
