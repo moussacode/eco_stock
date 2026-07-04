@@ -339,6 +339,31 @@ eco_stock/
 └── README.md
 ```
 
+```mermaid
+flowchart TD
+
+A[POST /api/products/{id}/move/] --> B[Récupérer le produit]
+
+B --> C{Produit existe ?}
+
+C -- Non --> D[404 Not Found]
+
+C -- Oui --> E{Produit périmé ?}
+
+E -- Oui --> F[400 Bad Request]
+
+E -- Non --> G[Lire le nouvel entrepôt]
+
+G --> H{Entrepôt existe ?}
+
+H -- Non --> I[404 Not Found]
+
+H -- Oui --> J[Changer product.warehouse]
+
+J --> K[product.save()]
+
+K --> L[200 OK<br/>Produit transféré]
+```
 ---
 
 # Auteur
